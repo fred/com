@@ -1,0 +1,55 @@
+/*** PAGINATION CSS for Paginating_find Plugin ***/
+.find_pagination { 
+	margin: 20px 2px 2px 2px;
+	padding: 2px;
+	/*border: thin solid blue;*/
+	float: left;
+	background: transparent;
+}
+.find_pagination ul { 
+	margin: 0;
+	padding: 0;
+	text-align: left; 
+	/* Can be set to "right" to right align find_pagination interface*/
+	font-size: 16px;
+}
+.find_pagination li { 
+	list-style-type: none;
+	display: inline;
+	padding-bottom: 1px;
+}
+.find_pagination a, .find_pagination a:visited { 
+	padding: 0 4px;
+	border: 1px solid #73C475;
+	text-decoration: none; 
+	color: #2e6ab1;
+	font-weight: 1em;
+} 
+.find_pagination a:hover, .find_pagination a:active { 
+	border: 1px solid #73C475;
+	color: #ad1112;;
+	background-color: transparent;
+} 
+.find_pagination li.currentpage { 
+	font-weight: bold;
+	padding: 0 4px;
+	border: 1px solid #73C475;
+	/*background-color: #73C475;*/
+	/*color: #FFF;*/
+	color: #666;
+} 
+.find_pagination li.disablepage { 
+	padding: 0 5px;
+	border: 1px solid #73C475;
+	color: #929292;
+} 
+.find_pagination li.nextpage { 
+	font-weight: bold;
+} 
+* html .find_pagination li.currentpage, * html .find_pagination li.disablepage { 
+	/* IE 6 and below. */
+	/* Adjust non linked LIs slightly to account for bugs */
+	margin-right: 5px;
+	padding-right: 0;
+}
+/**** PAGINATION ENDS HERE *****/

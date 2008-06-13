@@ -1,0 +1,250 @@
+/* ONE WORLD CSS  LFS ACES - Leave this code here please.  Template by Len Saunders  http://www.lensaunders.com */
+
+body {
+	margin:0;
+	padding:0;
+	font-family:Verdana;
+	font-size:1em;
+	color:#666666;
+	text-align:center;
+	background-color: #FFFFFF;
+	background-image: url(/images/bg.gif);
+	background-position: top center;
+	background-attachment: scroll;
+	background-repeat: repeat-y;
+	margin:0;
+	padding:0;
+}
+
+p {
+	margin:0.2em 0 0.5em 0; 
+	padding:0.3em;
+}
+
+h1 {
+	padding:20;
+	margin:0;
+	font-size:3.5em;
+	font-weight:bold;
+	font-style:none; 
+	color:#000000;
+	font-family:Arial;
+	text-align:left;
+}
+
+h2 {
+	background-color:#DDDDDD;
+	color:#3B4471;
+	font-size:20px;
+	font-weight:normal;
+	margin: 0 0 15px 0;
+	padding:0; 
+	font-style:italic;
+	font-family:Verdana;
+}
+
+h3 {
+	font-size:20px;
+	font-weight:bold;
+	font-style:none; 
+	color:#000000; font-family:Arial; text-align:center;
+}
+
+h4, h5 {
+	font-size:15px;
+	font-weight:normal;
+	font-style:none; 
+	color:#000000;
+	font-family:Verdana;
+	text-align:justify;
+}
+h5 {
+	font-size: 13px;
+}
+
+div {
+	margin:0; padding:0; display:block;
+}
+
+a:link, a:visited {
+	color:#000000; text-decoration:none;
+}
+a:hover {
+	color:#008103; text-decoration:none;
+}
+a:active {
+	color:#000000; text-decoration:none;
+}
+
+.container {
+	background-color:#FFFFFF;
+	margin:0 auto 0 auto; 
+	padding:0; 
+	width:780px;
+}
+
+.titleblock {
+	width:780px;
+	height:240px;
+	margin:0;
+	padding:0;
+	text-align:left;
+	background-color:#151515;
+	background-image:url(/images/header.jpg);
+	background-repeat:no-repeat;
+	background-position:center left;
+}
+.titleblock .title {
+	padding:32px;
+	width:500px;
+}
+
+.titleblock p {
+ color:#000000;
+}
+
+
+ul.navbar {
+	list-style-type:none;
+	float:left;
+	display:block;
+	width:100%;
+	line-height:1.5em;
+	clear:both;
+	margin:0;
+	padding:0;
+	background-color:#1E1F1A;
+}
+ul.navbar li {
+	display:inline;
+}
+a.nav:link, a.nav:visited {
+	display:block; 
+	float:left; 
+	width:13%; 
+	padding:1.2em 0 1.2em 0; 
+	margin:0; 
+	text-decoration:none; 
+	background-color:#1E1F1A; 
+	color:#FFFFFF;
+}
+a.nav:hover {
+	display:block;
+	float:left;
+	width:13%;
+	padding:1.2em 0 1.2em 0;
+	margin:0; 
+	text-decoration:none;
+	background-color:#83796D;
+	color:#000000;
+}
+a.nav:active {
+	display:block;
+	float:left;
+	width:13%;
+	padding:1.2em 0 1.2em 0;
+	margin:0; 
+	text-decoration:none;
+	background-color:#FECA02;
+	color:#000000;
+}
+
+.rightcontainer {
+	float:right;
+	clear:both;
+	width:13em;
+	margin:1em 0 0 0;
+	padding:0;
+}
+
+.rightbox {
+	margin:0.5em;
+	padding:0.3em;
+	border:1px solid #999999;
+	text-align:center;
+}
+
+.rightcontainer h2 {
+	text-align:left;
+	padding:0 0 0 1.5em;
+}
+
+.linkbox a {
+	display:block;
+}
+
+
+.content {
+	clear:left;
+	text-align:left;
+	margin:1.2em 0 0 0; 
+	padding:1em 1ex 1em 1.5ex;
+}
+.content table {
+	border: 1px solid #aaa;
+}
+.content td,
+.content tr	{
+	padding: 2px;
+	border: 1px solid #aaa;
+}
+
+.content h2 {
+	text-indent:3em;
+}
+
+
+.style1 {color: #FFFFFF}
+.style5 {font-size: 14px}
+.style9 {
+	color: #FFFFFF;
+	font-size: 28px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.style11 {
+	font-size: 10px
+}
+
+body {
+	background-color: #82A9E9;
+}
+.style13 {
+	font-size: 14px;
+	font-family: Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style14 {
+	font-size: 12px
+}
+
+.footer a.style14 {
+	color:#999999;
+	font-size: 12px
+}
+
+.style15 {
+	color: #FFCC00;
+	font-weight: bold;
+}
+
+.footer {
+	color:#999999; font-size:75%; margin:2.5em 0.2em 0.5em 0.5em; padding:2.8em; 
+	border-top:1px solid #999999; text-align:left; clear:both;
+}
+
+.footer .right {
+	float:right; clear:right; text-align:right;
+}
+
+.footer p {
+	margin:0;
+}
+
+
+a.admin {
+	color: orange !important;
+}
+
+

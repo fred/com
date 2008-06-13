@@ -1,0 +1,28 @@
+<h2>Pages</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Permalink</th>
+		<th>Menu Title</th>
+		<th>Menu Order</th>
+  </tr>
+
+<% for page in @pages %>
+  <tr>
+    <td><%=h page.title %></td>
+    <td><%=h page.permalink %></td>
+		<td><%=h page.link_title %></td>
+		<td><%=h page.menu_order %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<% if admin %>
+	<p class="admin"><%= button_to 'New Page', new_page_path %></p>
+<% end %>

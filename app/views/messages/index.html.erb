@@ -1,0 +1,28 @@
+<h2>Listing messages</h2>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone number</th>
+    <th>Body</th>
+    <th>Urgent</th>
+  </tr>
+
+<% for message in @messages %>
+  <tr>
+    <td><%=h message.name %></td>
+    <td><%=h message.email %></td>
+    <td><%=h message.phone_number %></td>
+    <td><%=h truncate(message.body, 46, "...") %></td>
+    <td><%= boolean_to_word(message.urgent_contact) %></td>
+    <td><%= link_to 'Show', message %></td>
+    <td><%= link_to 'Edit', edit_message_path(message) %></td>
+    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New message', new_message_path %>

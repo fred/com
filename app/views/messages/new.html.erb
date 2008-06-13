@@ -1,0 +1,32 @@
+<h2> Please Leave a Message</h2>
+<% form_for(@message) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    Name <br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    Contact Email <br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    Contact Phone Number <br />
+    <%= f.text_field :phone_number %>
+  </p>
+  <p>
+    Message <br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+		Contact me Urgently
+    <%= f.check_box :urgent_contact %>
+  </p>
+  <p>
+    <%= f.submit "Send Message" %>
+  </p>
+<% end %>
+
+<p> We will soon contact you </p>
+
+<p><i> * Your personal information will not be shared or sold to anyone.</i></p>
