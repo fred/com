@@ -1,18 +1,19 @@
 <h3>Image Gallery</h3>
 
-<table>
-  <tr>
-  </tr>
-
 <% for image in @images %>
-  <tr>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
+	<div class="image_thumb">
+		<%= link_to image_tag(image.public_filename(:medium)), image_path(image) %>
+		<% if admin %>
+			<%= link_to 'Show', image %>
+ 			<%= link_to 'Edit', edit_image_path(image) %>
+ 			<%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %>
+		<% end %>
+		
+		<p><%= image.description %></p>
+	</div>
+
+<% end %>
 
 <br />
 

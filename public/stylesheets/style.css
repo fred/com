@@ -230,8 +230,13 @@ body {
 }
 
 .footer {
-	color:#999999; font-size:75%; margin:2.5em 0.2em 0.5em 0.5em; padding:2.8em; 
-	border-top:1px solid #999999; text-align:left; clear:both;
+	color:#999999;
+	font-size:75%;
+	margin:2.5em 0.2em 0.5em 0.5em;
+	padding:2.8em; 
+	border-top:1px solid #999999;
+	text-align:left;
+	clear:both;
 }
 
 .footer .right {
@@ -248,3 +253,7 @@ a.admin {
 }
 
 
+.image_full img {
+	border: 1px solid green;
+	max-width: 750px;
+}

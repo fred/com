@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.xml
   def index
-    @images = Image.find(:all)
+    @images = Image.find(:all, :conditions => ["parent_id is NULL"])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,16 +44,12 @@ class ImagesController < ApplicationController
   # POST /images.xml
   def create
     @image = Image.new(params[:image])
-
-    respond_to do |format|
-      if @image.save
-        flash[:notice] = 'Image was successfully created.'
-        format.html { redirect_to(@image) }
-        format.xml  { render :xml => @image, :status => :created, :location => @image }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @image.errors, :status => :unprocessable_entity }
-      end
+    
+    if @image.save
+      flash[:notice] = 'Image was successfully created.'
+      redirect_to(images_path)
+    else
+      render :action => "new"
     end
   end
 
