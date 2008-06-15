@@ -1,0 +1,16 @@
+<h2>There is a new message at comizu.com </h2>
+<% if @message.urgent_contact %>
+<h2 style="color:red;">Urgent</h2>
+<% end %>
+
+<p> <u>Name:</u> <%= @message.name %> </p>
+
+<p> <u>Email:</u> <%= @message.email %> </p>
+
+<p> <u>Phone:</u> <%= @message.phone_number %> </p>
+
+<p> <u>Message:</u> <%= @message.body %> </p>
+
+<p> 
+	To view it click <a href="http://comizu.com/messages/<%= @message.id %>"> HERE </a>.
+</p>

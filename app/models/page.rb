@@ -7,6 +7,13 @@ class Page < ActiveRecord::Base
   
   before_save :clear_permalink
   
+  before_destroy :keep_home
+  
+  def keep_home
+    if self.permalink == "home"
+      raise "Sorry. You Can't delete the Home Page."
+    end
+  end
   
   def self.find_permalink(permalink)
     begin

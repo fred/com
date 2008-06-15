@@ -25,4 +25,20 @@ class ApplicationController < ActionController::Base
     @pages = Page.find(:all, :select => "id,title,permalink", :order => "menu_order ASC")
   end
   
+  def rescue_action(exception)
+     if RAILS_ENV == "development"
+       @error_body = "<h3> #{exception.message} </h3>" +
+       "<h3> Backtrace: </h3>" +
+       exception.backtrace.join("\n") +
+       "<h3> Session: </h3>" +
+       session.inspect
+     else
+       @error_body =  "<h2>Sorry, we couldn't find that page!</h2>" +
+     	 "<p> #{exception.message} </p>"
+       logger.error exception.message
+       logger.error exception.backtrace.join("\n")
+     end
+     render :template => 'shared/404'
+   end
+  
 end

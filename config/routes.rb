@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources :messages, :collection => {:thank_you => :any}
+  map.resources :messages, :collection => {:thank_you => :any, :moved_permanently => :any}
   map.resources :settings
   map.resources :pages
   map.resources :images
@@ -52,4 +52,8 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
+  # Non existing URL, send a "301 Moved Permanently"
+  map.connect '*path', :controller => "pages", :action => "moved_permanently"
+  
 end

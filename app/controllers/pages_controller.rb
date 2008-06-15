@@ -85,4 +85,16 @@ class PagesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  def moved_permanently
+    # this is good if you have old page deleted 
+    # or changed the tittle of a page, then
+    # search engines will see 301 and delete it on their index.
+    flash[:notice] = "Sorry, Page not found or moved permanently"
+    @title = "Sorry, Page not found or moved permanently"
+    headers["Status"] = "301 Moved Permanently"
+    redirect_to "/"
+  end
+  
 end

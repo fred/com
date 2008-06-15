@@ -1,0 +1,9 @@
+<div class="error_page">
+		
+	<p> <%= flash[:notice] %> </p>
+	
+	<% if @error_body %>
+		<p><%= @error_body %></p>
+	<% end %>
+	
+</div>

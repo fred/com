@@ -1,6 +1,7 @@
 class AddSettingsValues < ActiveRecord::Migration
   def self.up
-    Setting.set('info_email', 'info@comizu.com')
+    Setting.set('info_email', 'jmizurieta@comizu.com')
+    Setting.set('notifications_email', 'jmizurieta@comizu.com')
     Setting.set('admin_email', 'admin@comizu.com')
     Setting.set('meta_keywords', 'Comizu, VSAT, Maintenance, Satellites, Installation, Bangkok, Thailand')
     Setting.set('meta_author', 'Comizu')
