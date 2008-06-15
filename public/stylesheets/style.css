@@ -257,3 +257,11 @@ a.admin {
 	border: 1px solid green;
 	max-width: 750px;
 }
+
+.info {
+	font-size: 0.9em;
+	font-style: italic;
+}
+a.info {
+	color: #999;
+}
