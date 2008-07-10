@@ -1,11 +1,11 @@
-<h2>Settings</h2>
+<h2>Website Settings</h2>
 
 <table border=0>
 <tr>
 	<% form_for :setting, @setting, :url=>{:action=>'create'} do |f| -%>
 		<td><%= f.text_field :name, :size => 20 %></td>
 		<td><%= f.text_field :value, :size => 58 %></td>
-		<td><%= submit_tag 'create' %></td>
+		<td><%= submit_tag 'Create' %></td>
 	<% end %>
 </tr>
 	<% @settings.each do |setting| -%>
@@ -14,7 +14,7 @@
 			<tr>
 				<td id="setting_<%= setting.id %>"><%= setting.name %></td>
 				<td><%= f.text_field :value, :size => 58 %></td>
-				<td><%= submit_tag 'update' %></td>
+				<td><%= submit_tag 'Save' %></td>
 				<td><%= link_to 'delete', {:action=>'delete', :id=>setting.id}, :confirm=>'Are you sure?' %></td>
 			</tr>
 		<% end %>

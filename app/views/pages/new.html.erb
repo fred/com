@@ -1,4 +1,4 @@
-<h1>New Page</h1>
+<h3>Create a New Page</h3>
 
 <% form_for(@page) do |f| %>
   <%= f.error_messages %>
@@ -20,11 +20,15 @@
   </p>
   <p>
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+		<%= textile_editor :page, :body %>
   </p>
+	
+	<%= textile_editor_initialize %>
+	
   <p>
     <%= f.submit "Create" %>
   </p>
+  
 <% end %>
 
 <%= link_to 'Back', pages_path %>

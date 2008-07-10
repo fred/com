@@ -1,4 +1,4 @@
-<h1>Editing Page</h1>
+<h3>Editing Page</h3>
 
 <% form_for(@page) do |f| %>
   <%= f.error_messages %>
@@ -21,10 +21,13 @@
   </p>
   <p>
     <%= f.label :body %><br />
-    <%= f.text_area :body %>
+    <%= textile_editor :page, :body %>
   </p>
+  
+  <%= textile_editor_initialize %>
+  	
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Save" %>
   </p>
 <% end %>
 

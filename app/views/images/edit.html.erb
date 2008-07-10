@@ -1,11 +1,25 @@
-<h1>Editing image</h1>
+<h3>Editing image</h3>
 
 <% form_for(@image) do |f| %>
   <%= f.error_messages %>
 
+  <div class="image_full">
+    <%= button_to 'Delete Image', @image, :confirm => 'Are you sure?', :method => :delete %>
+  	<%= image_tag(@image.public_filename) %>
+  </div>
+
+  <br />
+  <p> Upload New Image: </p>
+	<%= f.file_field :uploaded_data %>
+	
+	<br />
+	<p>Description: </p>
+	<%= f.text_area :description, :rows => 8, :cols => 40 %>
+	
   <p>
     <%= f.submit "Update" %>
   </p>
+  
 <% end %>
 
 <%= link_to 'Show', @image %> |

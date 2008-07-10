@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
        session.inspect
      else
        @error_body =  "<h2>Sorry, we couldn't find that page!</h2>" +
-     	 "<p> #{exception.message} </p>"
+       "<p> #{exception.message} </p>"
        logger.error exception.message
        logger.error exception.backtrace.join("\n")
      end
