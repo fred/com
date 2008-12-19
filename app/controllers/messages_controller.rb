@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
   
+  caches_page :new
+  
   before_filter :login_required, :only => [ :index, :show, :edit, :update, :destroy ]
   
   # GET /messages

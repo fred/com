@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
   
   before_filter :login_required, :only => [ :new, :edit, :create, :update, :destroy ]
+  caches_page :index, :show
   
   # GET /images
   # GET /images.xml
@@ -46,6 +47,7 @@ class ImagesController < ApplicationController
     @image = Image.new(params[:image])
     
     if @image.save
+      expire_page :action => "index"
       flash[:notice] = 'Image was successfully created.'
       redirect_to(images_path)
     else
@@ -60,6 +62,7 @@ class ImagesController < ApplicationController
 
     respond_to do |format|
       if @image.update_attributes(params[:image])
+        expire_page :action => "show", :id => @image.id
         flash[:notice] = 'Image was successfully updated.'
         format.html { redirect_to(@image) }
         format.xml  { head :ok }
@@ -75,7 +78,7 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
-
+    expire_page :action => "index"
     respond_to do |format|
       format.html { redirect_to(images_url) }
       format.xml  { head :ok }

@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   
+  caches_page :index, :show
+  
   before_filter :login_required, :only => [ :index, :new, :edit, :create, :update, :destroy ]
   
   # GET /pages
@@ -47,6 +49,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.save
+        expire_page :action => "index"
         flash[:notice] = 'Page was successfully created.'
         format.html { redirect_to(@page) }
         format.xml  { render :xml => @page, :status => :created, :location => @page }
@@ -64,6 +67,7 @@ class PagesController < ApplicationController
 
     respond_to do |format|
       if @page.update_attributes(params[:page])
+        expire_page :action => "show", :id => @page.id
         flash[:notice] = 'Page was successfully updated.'
         format.html { redirect_to(@page) }
         format.xml  { head :ok }
@@ -79,7 +83,7 @@ class PagesController < ApplicationController
   def destroy
     @page = Page.find(params[:id])
     @page.destroy
-
+    expire_page :action => "index"
     respond_to do |format|
       format.html { redirect_to(pages_url) }
       format.xml  { head :ok }
